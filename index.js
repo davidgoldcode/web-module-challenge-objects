@@ -170,3 +170,4 @@ function carMaker(odometer) {
   }
 }
 
+console.log(carMaker(8).drive(10));
