@@ -59,9 +59,12 @@ console.log(reviews[5]['feedback']);
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
 reviews.push({name:"Clarettas", rating: 3.5, feedback: "Pretty darn good"});
 
+console.log(reviews);
+
 /* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays" */
 reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
 
+console.log(reviews);
 
 /*  Task 6: Write a function to return a review based on the index of the review in the array.
 
@@ -92,8 +95,7 @@ and should return a string in the format `name} gave the restaurant a {rating}, 
 For example, if getLastReview is invoked passing the reviews array it will return `Reyna gave the restaurant a 3.5 star review and their feedback was: "this place is chill with really cool people, great for getting work done on weekdays"`.
 */
 function getLastReview(arrObj) {
-  let index = arrObj.length - 1;
-  return `${arrObj[index].name} gave the restaurant a ${arrObj[index].rating}, and their feedback was: ${arrObj[index].feedback}`;
+  return `${arrObj[arrObj.length - 1].name} gave the restaurant a ${arrObj[arrObj.length - 1].rating}, and their feedback was: ${arrObj[arrObj.length - 1].feedback}`;
   } 
 
   console.log(getLastReview(reviews));
@@ -114,9 +116,10 @@ function getLastReview(arrObj) {
 */
 
 function getReviewByRating(arr, rating) {
+  let newArray = [];
   for (let i = 0; i < arr.length; i++) {
-    arr[i].rating === 4 ? console.log(arr[i]) : null;
-}
+    arr[i].rating === 4 ? newArray.push(arr[i]) : null;
+} return newArray;
 }
 console.log(getReviewByRating(reviews, 4));
   
