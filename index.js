@@ -6,12 +6,20 @@ const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakf
 
 /* Task 1a: write a function to return more menu items with the same format as the items above. */
 
-function createMenuItem(name, cost, category){
-    /* Code here */
-}
+function createMenuItem(name, cost, category) {
+  const newItem = {
+    name: name,
+    price: cost,
+    category: category
+  }
+    return newItem;
+  }
 
+  console.log(createMenuItem('pasta', 100, 'dinner'));
 /* Task 1b: use your function to create 3 more menu items. You may add any items to the menu that you'd like */
-
+const pasta = createMenuItem('Pasta', 20, 'Dinner')
+const donut = createMenuItem('Chocolate Donut', 5, 'Dessert')
+const eggHash = createMenuItem('Egg Hash', 15, 'Breakfast')
 
 
 /* Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter. 
@@ -23,8 +31,16 @@ Your method should accept:
 and should return a number. 
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
+const burger = {name: "Burger", price: 18, category: "Lunch", discount: 
+function(role) {
+  if (role === 'teacher' || role === 'student') {
+    return this.price * .75;
+  } else {
+    return this.price * .90;
+  }
+}};
 
-
+console.log(burger.discount('teacher'));
 
 ///////////////Reviews (MVP)///////////////////
 
@@ -39,12 +55,14 @@ const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and
 ]
 
 /* Task 3: Console.log just Julius' feedback */
-
+console.log(reviews[5][feedback]);
 
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
+reviews.push({name:"Clarettas", rating: 3.5, feedback: "Pretty darn good"});
 
+/* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays" */
+reviews[7]['feedback'] = "this place is chill with really cool people, great for getting work done on weekdays";
 
-/* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
 
 /*  Task 6: Write a function to return a review based on the index of the review in the array.
 
